@@ -1,47 +1,45 @@
 <html>
 <head>
 	<title>TEK-SPACE</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="js/jq.js"></script>
 </head>
 <body>
-
-<div class="rings">
-	<span class="staticbox">
-		<img src="img/minilogo.png">
-	</span>
-	<span class="ring one"></span>
-	<span class="ring two"></span>
-	<span class="ring three"></span>
-	<span class="ring four"></span>
-	
-	<!--
-	<span class="bubbles">
-		<span class="bubble b1" apc-pid="1">1</span>
-		<span class="bubble b2" apc-pid="2">2</span>
-		<span class="bubble b3" apc-pid="3">3</span>
-		<span class="bubble b4" apc-pid="4">4</span>
-		<span class="bubble b5" apc-pid="5">5</span>
-	</span>
-	-->	
+<div id="main-grid">
+	<div class="header">
+		<div class="rings">
+			<span class="staticbox">
+				<img src="img/minilogo.png">
+			</span>
+			<span class="ring one"></span>
+			<span class="ring two"></span>
+			<span class="ring three"></span>
+			<span class="ring four"></span>
+		</div>
+	</div>
+	<div class="content">
+		<h2>Hvad er TEK-Space</h2>
+		<p> TEK-Space er et kreativt værksted, et miljø, hvor du kan lege med skøre ideer, møde andre kreative mennesker, og bygge på lige netop det projekt, du har lyst til.</p>
+		<p> Måske vil du gerne bygge en lille robot ud af en fjernstyret bil, måske vil du gerne montere elektronikken fra en mobiltelefon i en gammeldags telefon med drejeskive, programmere en AI til iPhone eller noget helt andet.
+		</p>
+	</div>
 </div>
-kage
-
 <?php
-
+/*
 include("code/stripe/init.php");
 
 \Stripe\Stripe::setApiKey("SECRET KEY");
 
 $products = \Stripe\Product::all();
-
+*/
 ?>
 
 <script type="text/javascript">
 $(document).ready(function(){
 	setTimeout(function(){$(".rings").addClass('loaded')}, 200);
-
-	var prods = <?php echo substr($products, 24); ?>;
+	/*
+	var prods = <?php //echo substr($products, 24); ?>;
 	//console.log(prods);
 	prods.data.forEach(function(element) {
     	console.log(element.name);

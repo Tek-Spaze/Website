@@ -8,24 +8,23 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 }
 body{
-	background: #171d25;
+	background: #fafafa;
 	font-family: arial;
-	min-width: 600px;
-	color:#FFF;
+	color:#000;
 }
 
 /*** STATICBOX ***/
 
 .staticbox{
 	display: block;
-	width: 396px;
-	height: 396px;
+	width: 198px;
+	height: 198px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin: -198px 0 0 -198px;
+	margin: -99px 0 0 -99px;
 	background: rgba(0,0,0,0.3);
-	border-radius: 198px;
+	border-radius: 99px;	
 }
 .staticbox .viewer{
 	opacity: 0;
@@ -66,14 +65,9 @@ body{
 
 .rings{
 	display: block;
-	position: absolute;
-	margin: 0;
-	margin-top: 100px;
-	margin-right: -200px;
-	position: absolute;
-	right: 50%;
-	height: 400px;
-	width: 400px;
+	margin: 40px auto;
+	height: 200px;
+	width: 200px;
 	opacity: 0;
 	transition: all 800ms ease;
 	-webkit-transform: scale(0.2);
@@ -95,38 +89,38 @@ body{
 }
 .ring.one{
 	background: url(../img/rings/1.png) no-repeat center center;
-	background-size: 470px 470px;
-	margin: -235px 0 0 -235px;
-	height: 470px;
-	width: 470px;
+	background-size: 234px 234px;
+	margin: -117px 0 0 -117px;
+	height: 234px;
+	width: 234px;
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 180s;
 }
 .ring.two{
 	background: url(../img/rings/2.png) no-repeat center center;
-	background-size: 500px 500px;
-	margin: -250px 0 0 -250px;
-	height: 500px;
-	width: 500px;
+	background-size: 250px 250px;
+	margin: -125px 0 0 -125px;
+	height: 250px;
+	width: 250px;
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 70s;
 	-webkit-animation-direction: reverse;
 }
 .ring.three{
 	background: url(../img/rings/3.png) no-repeat center center;
-	background-size: 400px 400px;
-	margin: -200px 0 0 -200px;
-	height: 400px;
-	width: 400px;
+	background-size: 200px 200px;
+	margin: -100px 0 0 -100px;
+	height: 200px;
+	width: 200px;
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 100s;
 }
 .ring.four{
 	background: url(../img/rings/4.png) no-repeat center center;
-	background-size: 410px 410px;
-	margin: -205px 0 0 -205px;
-	height: 410px;
-	width: 410px;
+	background-size: 208px 208px;
+	margin: -104px 0 0 -104;
+	height: 208px;
+	width: 208px;
 	-webkit-animation-direction: reverse;
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 120s;
@@ -194,4 +188,29 @@ body{
 .hide{
 	opacity: 0.0001 !important;
 }
-	
+
+/*** GRID ***/
+#main-grid{
+	display: grid;
+	grid-template-areas:
+		"head"
+		"cont";
+	grid-row-gap: 1em;
+}
+#main-grid>div{
+	box-shadow: 2px 2px 4px 0px #CCCCCC;
+}
+.header{
+	grid-area: head;
+  	background: #37474f;
+  	min-width: 100%;
+  	justify-content: center;
+}
+.content{
+	grid-area: cont;
+	border: 1px solid #ddd;
+	margin: 0 1em;
+}
+.content>h1{
+	font-size: 2em;
+}
