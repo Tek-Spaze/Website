@@ -65,7 +65,7 @@ body{
 
 .rings{
 	display: block;
-	margin: 40px auto;
+	margin: 80px auto;
 	height: 200px;
 	width: 200px;
 	opacity: 0;
@@ -192,13 +192,16 @@ body{
 /*** GRID ***/
 #main-grid{
 	display: grid;
+	grid-template-columns: 1em auto 1em;
 	grid-template-areas:
-		"head"
-		"cont";
+		"head head head"
+		". cont .";
 	grid-row-gap: 1em;
 }
 #main-grid>div{
-	box-shadow: 2px 2px 4px 0px #CCCCCC;
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.4);
+	box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.3);
 }
 .header{
 	grid-area: head;
@@ -208,9 +211,13 @@ body{
 }
 .content{
 	grid-area: cont;
+	-webkit-border-radius: 6px;
 	border: 1px solid #ddd;
-	margin: 0 1em;
+	margin: -40px 0 0 0;
+	padding: 1em;
+	background: #fff;
 }
 .content>h1{
 	font-size: 2em;
+	
 }

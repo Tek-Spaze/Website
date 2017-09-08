@@ -19,8 +19,8 @@
 		</div>
 	</div>
 	<div class="content">
-		<h2>Hvad er TEK-Space</h2>
-		<p> TEK-Space er et kreativt værksted, et miljø, hvor du kan lege med skøre ideer, møde andre kreative mennesker, og bygge på lige netop det projekt, du har lyst til.</p>
+		<h2>Hvad er Tek-Space?</h2>
+		<p> Tek-Space er et kreativt værksted, et miljø, hvor du kan lege med skøre ideer, møde andre kreative mennesker, og bygge på lige netop det projekt, du har lyst til.</p>
 		<p> Måske vil du gerne bygge en lille robot ud af en fjernstyret bil, måske vil du gerne montere elektronikken fra en mobiltelefon i en gammeldags telefon med drejeskive, programmere en AI til iPhone eller noget helt andet.
 		</p>
 	</div>
