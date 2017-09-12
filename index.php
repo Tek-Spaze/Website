@@ -57,10 +57,13 @@
 			<span class="ring four"></span>
 		</div>
 	</div>
+	<div class="menuicon">
+		<img class="shadow" src="img/menu.png">
+	</div>
 	<div class="fb">
 	<?php
 		for ($i=0; $i < 5; $i++) { 
-			echo "<p class='shadow'>".$posts[$i]['message']."<br><a href='".$posts[$i]['href']."' target='_blank'>".$posts[$i]['rdate'].".</a></p>";
+			echo "<p class='shadow'>".$posts[$i]['message']."<br><a href='".$posts[$i]['href']."' target='_blank'><br>	".$posts[$i]['rdate']."</a></p>";
 		}
 	?>
 	</div>
