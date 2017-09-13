@@ -136,7 +136,15 @@ a:visited{
 }
 
 @-webkit-keyframes spin {0%{-webkit-transform:rotateZ(0)}100%{-webkit-transform:rotateZ(360deg)}}
+@keyframes menu-animation {
+  from {
+    width: 48px;
+  }
 
+  to {
+    width: auto;
+  }
+}
 /***    ***/
 .hide{
 	opacity: 0.0001 !important;
@@ -160,14 +168,18 @@ a:visited{
 .menuicon{
 	grid-area: mico;
 	align-self: end;
-}
-.menuicon img{
-	width: 48px;
-	display: block;
-	padding: 0px;
 	background: #2c7ab0;
 	-webkit-border-radius: 2pt;
-
+	width: 48px;
+	-webkit-transition: width .5s; 
+    transition: width .5s;
+    margin-top:2em;
+}
+.menuicon img{
+	display: block;
+}
+.menuicon:hover{
+	width: auto;
 }
 .header{
 	grid-area: head;

@@ -57,8 +57,8 @@
 			<span class="ring four"></span>
 		</div>
 	</div>
-	<div class="menuicon">
-		<img class="shadow" src="img/menu.png">
+	<div class="menuicon shadow">
+		<img  src="img/menu.png">
 	</div>
 	<div class="fb">
 	<?php
