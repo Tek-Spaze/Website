@@ -80,12 +80,10 @@ a:visited{
 	transition: all 800ms ease;
 	-webkit-transform: scale(0.2);
 }
-
 .rings.loaded{
 	-webkit-transform: scale(1);
 	opacity: 1;
 }
-
 .ring{
 	display: block;
 	position: absolute;
@@ -94,7 +92,6 @@ a:visited{
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-fill-mode: none;
-		
 }
 .ring.one{
 	background: url(../img/rings/1.png) no-repeat center center;
@@ -134,7 +131,6 @@ a:visited{
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 120s;
 }
-
 @-webkit-keyframes spin {0%{-webkit-transform:rotateZ(0)}100%{-webkit-transform:rotateZ(360deg)}}
 @keyframes menu-animation {
   from {
@@ -168,18 +164,36 @@ a:visited{
 .menuicon{
 	grid-area: mico;
 	align-self: end;
-	background: #2c7ab0;
 	-webkit-border-radius: 2pt;
 	width: 48px;
-	-webkit-transition: width .5s; 
-    transition: width .5s;
-    margin-top:2em;
-}
-.menuicon img{
-	display: block;
+	height: 48px;
+	-webkit-transition: all 0.3s; 
+    transition: all 0.3s;
+    background-image:  url('/img/menu.png');
+    background-repeat: no-repeat;
+    background-color: #2c7ab0;
+    color:#ecf0f1;
 }
 .menuicon:hover{
-	width: auto;
+	width: 100%;
+	height: calc(100% - 2em);
+	background-image: none;
+}
+.menuicon div{
+	opacity: 0;
+	padding: 1em;
+	-webkit-transition: all 10s; 
+    transition: all 10ms;
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+    overflow-x:hidden;
+}
+.menuicon:hover div{
+	opacity: 1;
+	-webkit-transition: all 200ms; 
+    transition: all 200ms;
+	-webkit-transition-delay: 200ms;
+    transition-delay: 200ms;
 }
 .header{
 	grid-area: head;

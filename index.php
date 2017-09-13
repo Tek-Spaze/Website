@@ -58,7 +58,9 @@
 		</div>
 	</div>
 	<div class="menuicon shadow">
-		<img  src="img/menu.png">
+			<div>Forside</div>
+			<div>Projekter</div>
+			<div>Offentlige dokumenter</div>
 	</div>
 	<div class="fb">
 	<?php
