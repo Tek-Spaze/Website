@@ -1,7 +1,8 @@
 
 <?php 
 	/* The folder 'keys' is ignored in git for security and privacy reasons*/
-	require_once("keys/fb.php");
+	require_once("code/config.php");
+	require_once( ROOT . "code/keys/fb.php");
 
 	function rdate($date){
 		$tdiff = explode("-",date_diff(date_create($date),new DateTime())->format("%y-%m-%d"));
@@ -24,7 +25,7 @@
 		}
 	}
 
-	$jsonPost = file_get_contents('https://graph.facebook.com/tekspace/posts?fields=status_type,message,created_time&access_token='.fb_app_id.'|'.fb_api_key);
+	$jsonPost = file_get_contents('https://graph.facebook.com/tekspace/posts?fields=status_type,message,created_time&access_token='.FB_APP_ID.'|'.FB_API_KEY);
 	$tposts = json_decode($jsonPost);
 	$posts	= [];
 	foreach ($tposts->data as $key => $post) {
@@ -41,15 +42,15 @@
 <head>
 	<title>TEK-SPACE</title>
 	<link rel="icon" href="favicon.png" type="image/png"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jq.js"></script>
+	<link rel="stylesheet" type="text/css" href="file/css/main">
+	<script type="text/javascript" src="file/js/jq"></script>
 </head>
 <body>
 <div id="main-grid">
 	<div class="header">
 		<div class="rings">
 			<span class="staticbox">
-				<img src="img/minilogo.png">
+				<img src="file/png/minilogo">
 			</span>
 			<span class="ring one"></span>
 			<span class="ring two"></span>
@@ -57,12 +58,12 @@
 			<span class="ring four"></span>
 		</div>
 	</div>
-	<div class="menuicon card-1">
-			<a href="#">Forside</a>
-			<a href="#">Projekter</a>
-			<a href="#">Offentlige dokumenter</a>
-			<a href="#">Medlem</a>
+	<div id="menuicon" class="card-1">
+			<a href="/">Forside</a>
+			<a href="/projects">Projekter</a>
+			<a href="https://drive.google.com/drive/folders/0B8xJgnZAr6LsNmhBVlNjWUZYc28" target="_blank">Offentlige dokumenter</a>
 	</div>
+	<div id="menuiconuser" class="card-1"><a>Sign in</a></div>
 	<div class="fb">
 	<?php
 		for ($i=0; $i < 5; $i++) { 
@@ -90,13 +91,9 @@
 </div>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	setTimeout(function(){$(".rings").addClass('loaded')}, 200);
-})
-
-
-
+	$(document).ready(function(){
+		setTimeout(function(){$(".rings").addClass('loaded')}, 200);
+	})
 </script>
 </body>
-
 </html>

@@ -1,0 +1,5 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(?!file|code)(.*)$ parse.php
+RewriteRule ^file(.*)$ file.php
