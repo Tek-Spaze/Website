@@ -1,8 +1,14 @@
-
-<?php 
+<?php
 	/* The folder 'keys' is ignored in git for security and privacy reasons*/
 	require_once("code/config.php");
 	require_once( ROOT . "code/keys/fb.php");
+	session_start(); 
+	if(isset($_SESSION['user'])){
+		$user=$_SESSION['user'];
+		$loggedin = true;
+	}else{
+		$loggedin = false;
+	}
 
 	function rdate($date){
 		$tdiff = explode("-",date_diff(date_create($date),new DateTime())->format("%y-%m-%d"));
@@ -41,7 +47,7 @@
 <html>
 <head>
 	<title>TEK-SPACE</title>
-	<link rel="icon" href="favicon.png" type="image/png"/>
+	<link rel="icon" href="/file/png/favicon" type="image/png"/>
 	<link rel="stylesheet" type="text/css" href="file/css/main">
 	<script type="text/javascript" src="file/js/jq"></script>
 </head>
@@ -58,12 +64,26 @@
 			<span class="ring four"></span>
 		</div>
 	</div>
+
 	<div id="menuicon" class="card-1">
-			<a href="/">Forside</a>
-			<a href="/projects">Projekter</a>
-			<a href="https://drive.google.com/drive/folders/0B8xJgnZAr6LsNmhBVlNjWUZYc28" target="_blank">Offentlige dokumenter</a>
+		<a href="/">Forside</a>
+		<a href="/projects">Projekter</a>
+		<a href="https://drive.google.com/drive/folders/0B8xJgnZAr6LsNmhBVlNjWUZYc28" target="_blank">Offentlige dokumenter</a>
 	</div>
-	<div id="menuiconuser" class="card-1"><a>Sign in</a></div>
+	<?php if(!$loggedin){ ?>
+		<div id="menuiconuser" class="card-1"><a class="s-in">Sign in</a><a class="s-up">Sign up</a></div>
+		<div id="sign-in">
+			<form action="/signin" method="post">
+				<input class="field" type="mail" name="email"/>
+				<input class="field" type="password" name="pass">
+				<button class="btt"  type="submit">Sign in</button>
+			</form>
+			<div id="back"></div>
+		</div>
+	<?php } else{?>
+		<div id="menuiconuserl"><?php echo $user["name"]?></div>
+	<?php } ?>
+	
 	<div class="fb">
 	<?php
 		for ($i=0; $i < 5; $i++) { 
@@ -95,7 +115,17 @@
 	$(document).ready(function(){
 		setTimeout(function(){$(".rings").addClass('loaded')}, 200);
 
-		$('#menuiconuser').click(function(){
+		$('.s-in').click(function(){
+			$("#sign-in").addClass("swoop");
+			$("#menuicon").addClass("swoop");
+			$("#menuiconuser").addClass("swoop");
+		});
+		$('#back').click(function(){
+			$("#sign-in").removeClass("swoop");
+			$("#menuicon").removeClass("swoop");
+			$("#menuiconuser").removeClass("swoop");
+		});		
+		$('.s-up').click(function(){
 			$(".popup").fadeIn(200);
 		});
 		$('#popup').click(function(){

@@ -169,7 +169,7 @@ h2{
 	grid-row-gap: 1em;
 	grid-column-gap: 1em;
 }
-#menuicon, #menuiconuser{
+#menuicon, #menuiconuser, #back, #menuiconuserl{
 	grid-area: mico;
 	align-self: end;
 	-webkit-border-radius: 2pt;
@@ -185,6 +185,12 @@ h2{
 
 #menuicon{
 	background-image:  url('/file/svg/menu');
+}
+#back{
+	background-image:  url('/file/svg/back');
+	position: relative;
+	bottom: 0;
+	margin-left: 11.8em;
 }
 
 #menuicon:hover{
@@ -227,7 +233,7 @@ h2{
 
 }
 #menuicon a:hover{
-	-webkit-transition: all 200s cubic-bezier(.25,.8,.25,1); 
+	-webkit-transition: all 200ms cubic-bezier(.25,.8,.25,1); 
     transition: all 200ms cubic-bezier(.25,.8,.25,1);
     transition-delay: 0s;
     padding-left: calc(1em + 1%);
@@ -235,30 +241,102 @@ h2{
     margin-left: 0;
 }
 
-#menuiconuser{
+#menuiconuser, #menuiconuserl{
 	margin-left: 3.2em;
     background-image: url('/file/svg/person');
     cursor: pointer;
 }
-#menuicon:hover ~ #menuiconuser{
-	margin-left: -webkit-calc(100% + 1em);
+#menuicon:hover ~ #menuiconuser,
+#menuicon:hover ~ #menuiconuserl{
+	margin-left: 15em;
 	opacity: 0;
 }
 #menuiconuser:hover{
 	width: 10.8em;
 
 }
-#menuiconuser>a{
+#menuiconuserl{
+	width: 8.6em;
+	padding-left:2.2em;
+	line-height: 2.2em;	
+}
+#menuiconuser a{
 	opacity: 0;
-	color: #2c7ab0;
-	margin-left: 2.2em;
+	position: absolute;
+	color: #bdc3c7;
 	line-height: 2.2em;
-	width: 4em;
+	height: 2.2em;
+	display: text-block;
+	width: 0em;
 	-webkit-transition: all 200s cubic-bezier(.25,.8,.25,1); 
     transition: all 200ms cubic-bezier(.25,.8,.25,1);
+    float: left;
+    overflow: hidden;
 }
-#menuiconuser:hover>a{
+#menuicon.swoop ,#menuiconuser.swoop{
+	margin-bottom: 9.6em;
+	opacity: 0;
+}
+.s-in{
+	padding-left: 2.2em;
+}
+.s-up{
+	margin.left: 2.2em;
+}
+#menuiconuser:hover .s-up{
+	margin-left: 6.5em;
+}
+#menuiconuser:hover a{
 	opacity: 1;
+	width: 4.2em;
+}
+#menuiconuser a:hover{
+	color: #2c7ab0;
+}
+
+#sign-in{
+	grid-area: mico;
+	align-self: end;
+	/*opacity: 0;*/
+	transform: translateY(4.8em) scaleY(0);
+	-webkit-transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+}
+#sign-in input, #sign-in button{
+	display: block;
+	border: none;
+	height: 2.2em;
+	background: #fff;
+	margin-top: 1em;
+	font-size: inherit;
+	padding: 0.5em;
+	-webkit-border-radius: 2pt;
+	border-radius: 2pt;
+}
+#sign-in .field{
+	width: 14em;
+}
+#sign-in .btt{
+	width: 10.8em;
+	position: relative;
+	margin-bottom: -2.2em;
+}
+input:active{
+	outline: 0;
+}
+#sign-in span{
+	display: block;
+	height: 2.2em;
+	width: 2.2em;
+	position: absolute;
+	bottom: 0em;
+	background: #fff;
+}
+#sign-in.swoop{
+	opacity: 1;
+    transform: translateY(0) scaleY(1);
+    -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .header{
 	grid-area: head;
@@ -366,7 +444,7 @@ h2{
 		grid-area: 1 / 2 / 2 / 3;
 		-webkit-grid-area: 1 / 2 / 2 / 3;
 	}*/ 	
-	#menuicon, .fb, #menuiconuser{
+	#menuicon, .fb, #menuiconuser, #menuiconuserl{
 		display: block;
 	}
 
