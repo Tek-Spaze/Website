@@ -13,9 +13,14 @@ for ($j=1; $j <= 16; $j++) {
 				);
 			}
 		}
+		$toppings = [];
+		foreach ($pizza->children[0]->children[1]->children as $topping) {
+			$toppings[] = utf8_encode(strtolower(preg_replace('/[.,\s]+/', '',$topping->nodes[0]->_[4])));
+		}
 		$pizzas[] = array(
 			'name' => utf8_encode($pizza->children[0]->children[0]->children[1]->nodes[0]->_[4]),
 			'number' => $pizza->children[0]->children[0]->children[0]->nodes[0]->_[4],
+			'topping' => $toppings,
 			'size' => $sizes
 		);
 	}
