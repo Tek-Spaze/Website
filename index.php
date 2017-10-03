@@ -89,10 +89,19 @@
 		</div>
 	</div>
 </div>
-
+<div class="popup" id="popup"></div>
+<div class="popup" id="puwin">kage</div>
 <script type="text/javascript">
 	$(document).ready(function(){
 		setTimeout(function(){$(".rings").addClass('loaded')}, 200);
+
+		$('#menuiconuser').click(function(){
+			$(".popup").fadeIn(200);
+		});
+		$('#popup').click(function(){
+			$(".popup").fadeOut(200);
+		});
+
 	})
 </script>
 </body>
