@@ -26,6 +26,7 @@ for ($j=1; $j <= 16; $j++) {
 	}
 }
 
-header('Content-Type: application/json');
-echo json_encode(array("pizza" => $pizzas));
+//header('Content-Type: application/json');
+//echo json_encode($pizzas);
+file_put_contents("pizza.json", json_encode($pizzas))
 ?>
