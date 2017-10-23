@@ -14,7 +14,7 @@ function rdate($date){
           return $tdiff[2]." dage siden";
         }
       }else{
-        return $tdiff[2]/7 ." uger siden";
+        return round($tdiff[2]/7) ." uger siden";
       }
     }else{
       return $tdiff[1]." månder siden";
